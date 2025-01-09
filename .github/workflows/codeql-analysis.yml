@@ -32,6 +32,8 @@ jobs:
     - if: matrix.build-mode == 'manual'
       shell: bash
       run: |
+        sudo apt update
+        sudo apt-get install cmake
         cmake .
         make
     - name: Free disk space
